@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florielle | Buquês, Presentes e Cestas Especiais</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        rose: {
+                            pale: '#FDF8F6',
+                            soft: '#F4EBE6',
+                            DEFAULT: '#D4A373',
+                            dark: '#A3704C'
+                        },
+                        sage: {
+                            light: '#F4F6F4',
+                            DEFAULT: '#8A9A86',
+                            dark: '#606F5E'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        h1, h2, h3, .font-serif { font-family: 'Cormorant Garamond', serif; }
+    </style>
+</head>
+<body class="bg-rose-pale text-gray-800 antialiased">
+
+    <!-- Header / Navegação -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-rose-soft shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2">
+                <i class="fa-solid fa-seedling text-sage text-2xl"></i>
+                <span class="font-serif text-3xl font-bold tracking-wider text-gray-900">Florielle</span>
+            </a>
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-600">
+                <a href="#inicio" class="hover:text-sage-dark transition">Início</a>
+                <a href="#catalogo" class="hover:text-sage-dark transition">Catálogo</a>
+                <a href="#monte" class="hover:text-sage-dark transition">Monte seu Buquê</a>
+                <a href="#sobre" class="hover:text-sage-dark transition">Sobre</a>
+                <a href="#contato" class="hover:text-sage-dark transition">Contato</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <button onclick="toggleCart()" class="relative p-2 rounded-full hover:bg-rose-soft transition text-gray-700">
+                    <i class="fa-solid fa-bag-shopping text-xl"></i>
+                    <span id="cart-badge" class="absolute -top-1 -right-1 bg-sage-dark text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative bg-gradient-to-r from-rose-soft/60 to-sage-light py-20 lg:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <span class="inline-block bg-white text-sage-dark px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase shadow-sm">Floricultura & Presentes</span>
+                <h1 class="text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">
+                    Emoções em forma de <span class="italic text-sage-dark">flores e cestas</span>.
+                </h1>
+                <p class="text-lg text-gray-600 font-light">
+                    Transforme momentos especiais em memórias inesquecíveis com nossos buquês artesanais, cestas exclusivas e presentes delicados.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#catalogo" class="bg-gray-900 hover:bg-sage-dark text-white px-8 py-4 rounded-full font-medium transition shadow-lg">Ver Catálogo</a>
+                    <a href="#monte" class="bg-white hover:bg-rose-soft text-gray-800 border border-gray-300 px-8 py-4 rounded-full font-medium transition">Monte seu Buquê</a>
+                </div>
+            </div>
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&q=80&w=800" alt="Arranjo Floral Florielle" class="rounded-3xl shadow-2xl object-cover w-full h-[450px]">
+            </div>
+        </div>
+    </section>
+
+    <!-- Catálogo de Produtos -->
+    <section id="catalogo" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+            <h2 class="text-4xl font-bold text-gray-900">Nossas Coleções</h2>
+            <p class="text-gray-600">Escolha entre buquês exclusivos, presentes marcantes e cestas recheadas de carinho.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Produto 1 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition border border-rose-soft flex flex-col">
+                <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&q=80&w=600" alt="Buquê Romântico" class="h-64 w-full object-cover">
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <span class="text-xs font-semibold text-sage uppercase tracking-wider">Buquês</span>
+                        <h3 class="text-2xl font-bold text-gray-900 mt-1">Buquê Aurora de Rosas</h3>
+                        <p class="text-gray-600 text-sm mt-2">Rosas vermelhas selecionadas com folhagens nobres e embalagem premium.</p>
+                    </div>
+                    <div class="mt-6 flex items-center justify-between">
+                        <span class="text-2xl font-serif font-bold text-gray-900">R$ 180,00</span>
+                        <button onclick="addToCart('Buquê Aurora de Rosas', 180)" class="bg-gray-900 hover:bg-sage-dark text-white px-4 py-2.5 rounded-full text-sm font-medium transition">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produto 2 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition border border-rose-soft flex flex-col">
+                <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&q=80&w=600" alt="Cesta de Café da Manhã" class="h-64 w-full object-cover">
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <span class="text-xs font-semibold text-sage uppercase tracking-wider">Cestas</span>
+                        <h3 class="text-2xl font-bold text-gray-900 mt-1">Cesta Amanhecer Especial</h3>
+                        <p class="text-gray-600 text-sm mt-2">Pães artesanais, frutas frescas, sucos, chocolates finos e mini arranjo floral.</p>
+                    </div>
+                    <div class="mt-6 flex items-center justify-between">
+                        <span class="text-2xl font-serif font-bold text-gray-900">R$ 250,00</span>
+                        <button onclick="addToCart('Cesta Amanhecer Especial', 250)" class="bg-gray-900 hover:bg-sage-dark text-white px-4 py-2.5 rounded-full text-sm font-medium transition">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produto 3 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition border border-rose-soft flex flex-col">
+                <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=600" alt="Presente Caixa Surpresa" class="h-64 w-full object-cover">
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <span class="text-xs font-semibold text-sage uppercase tracking-wider">Presentes</span>
+                        <h3 class="text-2xl font-bold text-gray-900 mt-1">Box Luxo com Girassóis</h3>
+                        <p class="text-gray-600 text-sm mt-2">Caixa elegante em acrílico/papelão rígido com girassóis vibrantes e bombons.</p>
+                    </div>
+                    <div class="mt-6 flex items-center justify-between">
+                        <span class="text-2xl font-serif font-bold text-gray-900">R$ 140,00</span>
+                        <button onclick="addToCart('Box Luxo com Girassóis', 140)" class="bg-gray-900 hover:bg-sage-dark text-white px-4 py-2.5 rounded-full text-sm font-medium transition">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Construtor: Monte seu Buquê -->
+    <section id="monte" class="py-20 bg-rose-soft/40">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 bg-white rounded-3xl p-8 sm:p-12 shadow-sm border border-rose-soft">
+            <div class="text-center space-y-3 mb-10">
+                <h2 class="text-3xl font-bold text-gray-900">Monte seu Próprio Buquê</h2>
+                <p class="text-gray-600 text-sm">Personalize cada detalhe do presente perfeito.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">1. Escolha a Flor Principal</label>
+                    <select id="flor-principal" class="w-full bg-rose-pale border border-gray-300 rounded-xl p-3 text-sm focus:outline-none focus:border-sage">
+                        <option value="120">Rosas Vermelhas (R$ 120)</option>
+                        <option value="100">Girassóis (R$ 100)</option>
+                        <option value="130">Mix de Flores Nobres (R$ 130)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">2. Estilo de Embalagem</label>
+                    <select id="embalagem" class="w-full bg-rose-pale border border-gray-300 rounded-xl p-3 text-sm focus:outline-none focus:border-sage">
+                        <option value="20">Papel Coreano Luxo (R$ 20)</option>
+                        <option value="15">Kraft Rústico (R$ 15)</option>
+                        <option value="35">Caixa Box Elegance (R$ 35)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="text-center sm:text-left">
+                    <span class="text-xs text-gray-500 block">Valor Personalizado</span>
+                    <span id="custom-price" class="text-3xl font-serif font-bold text-gray-900">R$ 140,00</span>
+                </div>
+                <button onclick="addCustomBouquet()" class="w-full sm:w-auto bg-sage-dark hover:bg-gray-900 text-white px-8 py-3.5 rounded-full font-medium transition">Adicionar Buquê Personalizado</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer id="contato" class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <span class="font-serif text-3xl font-bold tracking-wider">Florielle</span>
+                <p class="text-gray-400 text-sm mt-3">Sua floricultura de confiança para momentos especiais, entregando amor em cada detalhe.</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-4">Contato & WhatsApp</h4>
+                <p class="text-gray-400 text-sm">📲 (11) 99999-9999</p>
+                <p class="text-gray-400 text-sm mt-1">📧 contato@florielle.com.br</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-4">Horário de Atendimento</h4>
+                <p class="text-gray-400 text-sm">Segunda a Sábado: 08h às 19h</p>
+                <p class="text-gray-400 text-sm mt-1">Domingos e Feriados: 08h às 13h</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Carrinho Lateral (Drawer) -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm hidden flex justify-end">
+        <div class="bg-white w-full max-w-md h-full p-6 flex flex-col justify-between shadow-2xl">
+            <div>
+                <div class="flex items-center justify-between pb-4 border-b border-gray-200">
+                    <h3 class="text-xl font-bold text-gray-900">Sua Sacola Florielle</h3>
+                    <button onclick="toggleCart()" class="p-2 text-gray-500 hover:text-gray-900"><i class="fa-solid fa-xmark text-xl"></i></button>
+                </div>
+                <div id="cart-items" class="py-4 space-y-4 max-h-[60vh] overflow-y-auto">
+                    <p class="text-gray-500 text-center py-8">Sua sacola está vazia.</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-4 space-y-4">
+                <div class="flex justify-between text-lg font-bold">
+                    <span>Total:</span>
+                    <span id="cart-total">R$ 0,00</span>
+                </div>
+                <button onclick="checkoutWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3.5 rounded-full font-medium transition flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> Finalizar Pedido via WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Simples para o Carrinho e Construtor -->
+    <script>
+        let cart = [];
+
+        function toggleCart() {
+            const drawer = document.getElementById('cart-drawer');
+            drawer.classList.toggle('hidden');
+        }
+
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            updateCartUI();
+            toggleCart();
+        }
+
+        function updateCartUI() {
+            const badge = document.getElementById('cart-badge');
+            const itemsContainer = document.getElementById('cart-items');
+            const totalElement = document.getElementById('cart-total');
+
+            badge.innerText = cart.length;
+
+            if (cart.length === 0) {
+                itemsContainer.innerHTML = '<p class="text-gray-500 text-center py-8">Sua sacola está vazia.</p>';
+                totalElement.innerText = 'R$ 0,00';
+                return;
+            }
+
+            let html = '';
+            let total = 0;
+            cart.forEach((item, index) => {
+                total += item.price;
+                html += `
+                    <div class="flex justify-between items-center bg-rose-pale p-3 rounded-xl">
+                        <div>
+                            <h4 class="font-medium text-sm text-gray-900">${item.name}</h4>
+                            <span class="text-xs text-gray-500">R$ ${item.price.toFixed(2)}</span>
+                        </div>
+                        <button onclick="removeFromCart(${index})" class="text-red-500 hover:text-red-700 text-sm"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                `;
+            });
+
+            itemsContainer.innerHTML = html;
+            totalElement.innerText = `R$ ${total.toFixed(2)}`;
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        // Atualizar preço do construtor em tempo real
+        const florSelect = document.getElementById('flor-principal');
+        const embSelect = document.getElementById('embalagem');
+        const customPriceEl = document.getElementById('custom-price');
+
+        function updateCustomPrice() {
+            const total = parseInt(florSelect.value) + parseInt(embSelect.value);
+            customPriceEl.innerText = `R$ ${total},00`;
+        }
+
+        florSelect.addEventListener('change', updateCustomPrice);
+        embSelect.addEventListener('change', updateCustomPrice);
+
+        function addCustomBouquet() {
+            const florName = florSelect.options[florSelect.selectedIndex].text.split(' (')[0];
+            const embName = embSelect.options[embSelect.selectedIndex].text.split(' (')[0];
+            const price = parseInt(florSelect.value) + parseInt(embSelect.value);
+
+            addToCart(`Buquê Personalizado (${florName} + ${embName})`, price);
+        }
+
+        function checkoutWhatsApp() {
+            if (cart.length === 0) return;
+            let message = "Olá! Gostaria de fazer o seguinte pedido na Florielle:\n\n";
+            let total = 0;
+            cart.forEach(item => {
+                message += `- ${item.name}: R$ ${item.price.toFixed(2)}\n`;
+                total += item.price;
+            });
+            message += `\n*Total:* R$ ${total.toFixed(2)}`;
+            
+            // Substitua pelo seu número de WhatsApp com DDI e DDD (Ex: 5511999999999)
+            const phone = "5511999999999";
+            const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
